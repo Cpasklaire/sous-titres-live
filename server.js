@@ -47,13 +47,16 @@ const OVERLAY_PAGE = `<!doctype html><html lang="fr"><head><meta charset="utf-8"
 <title>Sous-titres — overlay</title>${FONT}
 <style>
   /* Réglages faciles */
-  :root{ --fs:64px; --col:#fff; }
+  :root{ --fs:64px; --col:#b46cff; --contour:#000; }
   html,body{margin:0;height:100%;background:transparent;overflow:hidden}
   #wrap{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
     align-items:center;padding:24px 40px 40px;box-sizing:border-box;gap:6px}
-  .l{font-family:Montserrat,sans-serif;font-weight:600;color:var(--col);text-align:center;
+  .l{font-family:Montserrat,sans-serif;font-weight:700;color:var(--col);text-align:center;
     line-height:1.15;max-width:100%;overflow-wrap:break-word;white-space:pre-wrap;
-    text-shadow:0 2px 6px rgba(0,0,0,.85),0 0 2px rgba(0,0,0,.9);transition:opacity .5s}
+    -webkit-text-stroke:6px var(--contour);paint-order:stroke fill;
+    text-shadow:3px 0 0 var(--contour),-3px 0 0 var(--contour),0 3px 0 var(--contour),0 -3px 0 var(--contour),
+      2px 2px 0 var(--contour),-2px -2px 0 var(--contour),2px -2px 0 var(--contour),-2px 2px 0 var(--contour),
+      0 4px 8px rgba(0,0,0,.6);transition:opacity .5s}
   .h{font-size:calc(var(--fs)*.7);opacity:.75}
   #cur{font-size:var(--fs);min-height:1px}
 </style></head><body>
